@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const token = process.env.TELEGRAM_TOKEN || '6279481409:AAGQAauDM7sFK6EbafFvhooqroyDWMwzLzw';
-const APIServerURL = process.env.API_SERVER || 'http://s1.mdkruls.net/storygenerator';
+const APIServerURL = process.env.API_SERVER || 'https://s1.mdkruls.net/storygenerator';
 
 const bot = new Telegraf(token);
 const telegram = new Telegram(token);
