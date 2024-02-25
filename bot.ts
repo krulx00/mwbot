@@ -3,12 +3,18 @@ import { message } from "telegraf/filters";
 import axios from "axios";
 import FormData from "form-data";
 import * as dotenv from "dotenv";
+import { Agent } from "node:https";
+
 dotenv.config();
 
 const token = process.env.TELEGRAM_TOKEN || '6279481409:AAGQAauDM7sFK6EbafFvhooqroyDWMwzLzw';
 const APIServerURL = process.env.API_SERVER || 'https://s1.mdkruls.net/storygenerator';
 
-const bot = new Telegraf(token);
+const bot = new Telegraf(token,{
+  telegram:{
+    agent: new Agent({keepAlive:false})
+  }
+});
 const telegram = new Telegram(token);
 
 bot.start(async (ctx) => {
