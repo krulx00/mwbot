@@ -54,8 +54,8 @@ bot.catch(async (err) => {
   console.log(err);
   process.exit(1);
 });
-// process.once("SIGINT", () => bot.stop("SIGINT"));
-// process.once("SIGTERM", () => bot.stop("SIGTERM"));
+process.once("SIGINT", () => bot.stop("SIGINT"));
+process.once("SIGTERM", () => bot.stop("SIGTERM"));
 
 const getFile = async (url: string) => {
   const response = await axios.get(url, { responseType: "arraybuffer" });
