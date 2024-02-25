@@ -5,16 +5,13 @@ import FormData from "form-data";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const token = process.env.TELEGRAM_TOKEN || "";
-const APIServerURL =
-  process.env.API_SERVER || "https://s1.mdkruls.net/storygenerator";
+const token = process.env.TELEGRAM_TOKEN || '6928340565:AAH5RYTtVIqteRKyjDrBdx8CXeuLCiMWcrY';
+const APIServerURL = process.env.API_SERVER || 'https://s1.mdkruls.net/storygenerator';
 
 const bot = new Telegraf(token);
 const telegram = new Telegram(token);
 
-
-
-bot.start(async(ctx) => {
+bot.start(async (ctx) => {
   await ctx.reply("Hello " + ctx.from.first_name + "!");
 });
 
@@ -51,10 +48,9 @@ bot.on(message("document"), async (ctx) => {
   );
 });
 
-
 bot.launch();
 
-bot.catch(async(err) => {
+bot.catch(async (err) => {
   console.log(err);
   process.exit(1);
 });
