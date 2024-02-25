@@ -5,7 +5,7 @@ import FormData from "form-data";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const token = process.env.TELEGRAM_TOKEN || '6279481409:AAHzhmO2V7Ljqhx-R2s5t27elr7AvSqtgLM';
+const token = process.env.TELEGRAM_TOKEN || '6279481409:AAGQAauDM7sFK6EbafFvhooqroyDWMwzLzw';
 const APIServerURL = process.env.API_SERVER || 'http://s1.mdkruls.net/storygenerator';
 
 const bot = new Telegraf(token);
